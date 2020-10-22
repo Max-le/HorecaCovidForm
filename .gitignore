@@ -2,3 +2,5 @@
 instance/
 .idea/
 venv/
+flaskvenv/
+__pycache__/
