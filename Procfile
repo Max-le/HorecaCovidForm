@@ -1,1 +1,1 @@
-web: gunicorn "HorecaApp:creater_app()"
+web: gunicorn wsgi:app
