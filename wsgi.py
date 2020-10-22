@@ -1,3 +1,3 @@
-from HorecaApp import create_app()
+from HorecaApp import create_app
 
 app = create_app()
