@@ -1,1 +1,1 @@
-web: gunicorn app:HorecaForm
+web: gunicorn "HorecaApp:creater_app()"
