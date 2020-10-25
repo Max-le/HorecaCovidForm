@@ -1,4 +1,5 @@
-DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS visitors;
+DROP TABLE IF EXISTS resto_admin;
 
 CREATE TABLE visitors (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -11,8 +12,8 @@ CREATE TABLE visitors (
 );
 
 
-CREATE TABLE admin (
+CREATE TABLE resto_admin (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   admin_name TEXT,
   password_hash TEXT
-)
+);

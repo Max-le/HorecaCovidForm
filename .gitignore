@@ -3,4 +3,5 @@ instance/
 .idea/
 venv/
 flaskvenv/
-__pycache__/
+__pycache__
+.vscode/
