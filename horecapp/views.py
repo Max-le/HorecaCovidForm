@@ -57,5 +57,6 @@ def provide_form():
         email = request.form.get("email")
         date_visit = request.form.get("dateVisit")
         hour_visit = request.form.get("hourVisit")
+        return render_template("validated.html")
    
     return render_template("form.html")
