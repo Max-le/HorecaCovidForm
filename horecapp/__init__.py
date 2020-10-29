@@ -28,8 +28,7 @@ class Visitors(db.Model):
     hour_visit = db.Column(db.String(128))
 
 
-
-class eatery_admin(db.Model):
+class Horecadmin(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     admin_name = db.Column(db.String(128), unique = True, nullable = False)
     password = db.Column(db.String(1024))
