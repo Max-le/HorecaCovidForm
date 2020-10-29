@@ -17,8 +17,6 @@ app.register_blueprint(views.bp)
 
 class Visitors(db.Model):
 
-    #Columns
-
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     first_name = db.Column(db.String(128))
     last_name = db.Column(db.String(128))
@@ -28,7 +26,7 @@ class Visitors(db.Model):
     hour_visit = db.Column(db.String(128))
 
 
-class Horecadmin(db.Model):
+class horecadmin(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     admin_name = db.Column(db.String(128), unique = True, nullable = False)
     password = db.Column(db.String(1024))
