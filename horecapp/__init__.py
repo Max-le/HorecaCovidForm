@@ -9,9 +9,9 @@ app = Flask(__name__, instance_relative_config=True)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 
-app.register_blueprint(views.bp)
-
 db = SQLAlchemy(app)
+
+app.register_blueprint(views.bp)
 
 
 
