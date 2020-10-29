@@ -5,10 +5,10 @@ from . import views
 from flask_sqlalchemy import SQLAlchemy
 
 
-app = Flask(__name__, instance_relative_config=True)
+app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
-
+app.logger.info(app.config)
 db = SQLAlchemy(app)
 
 app.register_blueprint(views.bp)
@@ -24,15 +24,17 @@ class Visitors(db.Model):
     email = db.Column(db.String(128))
     date_visit = db.Column(db.String(128))
     hour_visit = db.Column(db.String(128))
+#     place_visited = db.relationship('Horecadmin', backref='visito')
 
 
-class horecadmin(db.Model):
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    admin_name = db.Column(db.String(128), unique = True, nullable = False)
-    password = db.Column(db.String(1024))
+# class Horecadmin(db.Model):
+#     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+#     admin_name = db.Column(db.String(128), unique = True, nullable = False)
+#     password = db.Column(db.String(1024))
+    
 
 
-print("db created.")
+app.logger.info("db created.")
 db.create_all()
-print(db)
+app.logger.info(db)
 
