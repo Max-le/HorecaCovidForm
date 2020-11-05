@@ -1,18 +1,18 @@
 from flask import Flask
-
 from . import views
-
 from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///horecatest.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
 app.logger.info(app.config)
+
 db = SQLAlchemy(app)
 
 app.register_blueprint(views.bp)
-
 
 
 class Visitors(db.Model):
@@ -32,9 +32,5 @@ class Visitors(db.Model):
 #     admin_name = db.Column(db.String(128), unique = True, nullable = False)
 #     password = db.Column(db.String(1024))
     
-
-
-app.logger.info("db created.")
 db.create_all()
-app.logger.info(db)
-
+app.logger.info("db created.")
