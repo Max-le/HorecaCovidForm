@@ -3,7 +3,6 @@ import os
 from flask import current_app as app
 from flask import render_template, flash, request, redirect, url_for, Blueprint, session
 
-from horecapp.db import get_db
 
 from werkzeug.security import check_password_hash, generate_password_hash
 
@@ -20,15 +19,9 @@ def admin_login():
     if request.method == 'POST':
         admin_name = request.form['adminName']
         passwordTried = request.form['password']
-
-        db = get_db()
         
         error = None
 
-        
-        admin = db.execute(
-            'SELECT * FROM resto_admin WHERE admin_name = ?', (admin_name,) 
-            ).fetchone()
 
         ##Security flaw - don't indicate what information is wrong.
         if admin is None:
@@ -49,8 +42,6 @@ def admin_login():
 
 def get_list_visitors():
 
-    db = get_db()
-    visitors = db.execute('SELECT * FROM visitors').fetchall()
     for visitor in visitors: 
         print(tuple(visitor))
     return "List of visitors will appear here."
@@ -66,15 +57,6 @@ def provide_form():
         email = request.form.get("email")
         date_visit = request.form.get("dateVisit")
         hour_visit = request.form.get("hourVisit")
-        
-        db = get_db()
-
-        db.execute('INSERT INTO visitors (first_name, last_name, email, date_visit, hour_visit) VALUES (?, ?, ?, ?, ?)', 
-        (first_name, last_name, email, date_visit, hour_visit))
-
-        db.commit()
-    
-
-
-    
+        return render_template("validated.html")
+   
     return render_template("form.html")
