@@ -5,11 +5,15 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
+<<<<<<< HEAD
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///horecatest.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+=======
+>>>>>>> no-db
 
 app.logger.info(app.config)
 
+<<<<<<< HEAD
 db = SQLAlchemy(app)
 
 app.register_blueprint(views.bp)
@@ -34,3 +38,6 @@ class Horecadmin(db.Model):
     
 db.create_all()
 app.logger.info("db created.")
+=======
+
+>>>>>>> no-db
