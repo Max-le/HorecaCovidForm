@@ -24,13 +24,13 @@ class Visitors(db.Model):
     email = db.Column(db.String(128))
     date_visit = db.Column(db.String(128))
     hour_visit = db.Column(db.String(128))
-#     place_visited = db.relationship('Horecadmin', backref='visito')
+    place_visited = db.relationship('Horecadmin', backref='visito')
 
 
-# class Horecadmin(db.Model):
-#     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-#     admin_name = db.Column(db.String(128), unique = True, nullable = False)
-#     password = db.Column(db.String(1024))
+class Horecadmin(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    admin_name = db.Column(db.String(128), unique = True, nullable = False)
+    password = db.Column(db.String(1024))
     
 db.create_all()
 app.logger.info("db created.")
