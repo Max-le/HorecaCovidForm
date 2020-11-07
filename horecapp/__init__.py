@@ -10,6 +10,11 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 app.logger.info(app.config)
 
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///horecatest.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+app.logger.info(app.config)
+
 db = SQLAlchemy(app)
 
 app.register_blueprint(views.bp)
