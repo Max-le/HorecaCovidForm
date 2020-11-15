@@ -5,3 +5,4 @@ venv/
 flaskvenv/
 __pycache__
 .vscode/
+horecapp/__init__.pyc

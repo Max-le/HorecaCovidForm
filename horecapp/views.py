@@ -36,7 +36,7 @@ def admin_login():
             session['user_id'] = admin['id']
             return 'Succesfull admin login !'
         flash(error)
-    return render_template('admin.html', error=error)
+    return render_template('admin.html')
 
 
 
