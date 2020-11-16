@@ -11,8 +11,9 @@ bp = Blueprint('upload', __name__, url_prefix='/')
 @bp.route('/answer')
 def everything_answer():
     return "42"
-
-
+@bp.route('/why')
+def show_landing_page():
+    return render_template('landing.html')
 
 @bp.route('/admin', methods=('GET', 'POST'))
 def admin_login():
