@@ -1,20 +1,39 @@
-{% extends "layout.html" %}
-
-{% block body %}
-<div class="jumbotron">
-    <h1 class="display-4">Minimisez les contacts. Maximisez les sourires 😊</h1>
-    <p class="lead">Effectuez le tracking clients de manière plus sûre et efficace.</p>
-    <hr class="my-4">
-    <p>En utilisant <em>covidtrack.be</em>, fini la collecte des coordonées de vos clients sur une feuille de paier : 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <link rel="icon" 
+  type="image/png" 
+  href="../static/favicon.png">
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../static/bootstrap.css">
+  
+  <title>Horeca against COVID</title>
+</head>
+<body>
+  <main class="container p-5">
+    <div class="jumbotron">
+      <h1 class="display-4">Minimisez les contacts. Maximisez les sourires 😊</h1>
+      <p class="lead">Effectuez le tracking clients de manière plus sûre et efficace.</p>
+      <hr class="my-4">
+      <p>En utilisant <em>covidtrack.be</em>, fini la collecte des coordonées de vos clients sur une feuille de paier : 
         <ul>
-            <li>Suppression <strong>automatique</strong> des données après les 14 jours réglementaires.</li>
-            <li>En cas de nécessité, récupérez la liste des clients en un click.</li>
-            <li>QR code customisable et stylisé, en harmonie avec le thème de votre établissement.</li>
+          <li>Suppression <strong>automatique</strong> des données après les 14 jours réglementaires.</li>
+          <li>En cas de nécessité, récupérez la liste des clients en un click.</li>
+          <li>QR code customisable et stylisé, en harmonie avec le thème de votre établissement.</li>
         </ul>
-    </p>
+      </p>
+      
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="/form" role="button">Voir la version démo</a>
+      </p>
+    </div>
+    
+  </main>
+</body>
+</html>
 
-    <p class="lead">
-      <a class="btn btn-primary btn-lg" href="/form" role="button">Voir la version démo</a>
-    </p>
-  </div>
-{% endblock %}
