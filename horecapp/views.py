@@ -11,11 +11,11 @@ bp = Blueprint('upload', __name__, url_prefix='/')
 @bp.route('/answer')
 def everything_answer():
     return "42"
-@bp.route('/why')
+@bp.route('/')
 def show_landing_page():
     return render_template('landing.html')
 
-@bp.route('/admin', methods=('GET', 'POST'))
+@bp.route('/demo-admin', methods=('GET', 'POST'))
 def admin_login():
     if request.method == 'POST':
         admin_name = request.form['adminName']
@@ -48,7 +48,7 @@ def get_list_visitors():
     return "List of visitors will appear here."
 
 
-@bp.route('/', methods=['GET', 'POST'])
+@bp.route('/demo-form', methods=['GET', 'POST'])
 def provide_form():
 
     if request.method == "POST": 
