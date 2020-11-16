@@ -13,8 +13,22 @@
   <link rel="stylesheet" href="../static/bootstrap.css">
   
   <title>Horeca against COVID</title>
+  
+  <style>
+    .landing-background {
+
+      background-image: url("../static/chef.jpg");
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .jumbotron { background: none;} /**Makes it semi-transparent**/
+  </style>
 </head>
 <body>
+  <div class="landing-background">
   <main class="container p-5">
     <div class="jumbotron">
       <h1 class="display-4">Minimisez les contacts. Maximisez les sourires 😊</h1>
@@ -34,6 +48,10 @@
     </div>
     
   </main>
+
+</div><!-- Closing tag for background-image -->
+
+
 </body>
 </html>
 
