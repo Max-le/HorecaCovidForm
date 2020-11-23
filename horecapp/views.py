@@ -3,7 +3,6 @@ import os
 from flask import current_app as app
 from flask import render_template, flash, request, redirect, url_for, Blueprint, session
 
-from horecapp import Horecadmin
 
 from werkzeug.security import check_password_hash, generate_password_hash
 
