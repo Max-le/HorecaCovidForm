@@ -3,6 +3,7 @@ import os
 from flask import current_app as app
 from flask import render_template, flash, request, redirect, url_for, Blueprint, session
 
+from horecapp import Horecadmin
 
 from werkzeug.security import check_password_hash, generate_password_hash
 
@@ -15,10 +16,24 @@ def everything_answer():
 def show_landing_page():
     return render_template('landing.html')
 
-@bp.route('/admin', methods=('GET', 'POST'))
+@bp.route('/signup', methods=['POST'])
+def admin_signup():
+    admin_name = request.form.get('adminName')
+    password = request.form.get('password')
+
+    admin = Horecadmin.query.filter_by(admin_name=admin_name).first() # if this returns a user, then the name already exists in database
+    if admin:
+        return redirect(url_for('signup'))
+    new_horeca_admin = Horecadmin(admin_name=admin_name, password=generate_password_hash(password, method='sha256'))
+    db.session.add()
+    db.session.commit()
+    return redirect(url_for('login'))
+
+
+@bp.route('/login', methods=('GET', 'POST'))
 def admin_login():
     if request.method == 'POST':
-        admin_name = request.form['adminName']
+        admin = request.form['adminName']
         passwordTried = request.form['password']
         
         error = None
@@ -29,7 +44,6 @@ def admin_login():
             error = 'Incorrect username.'
         elif not check_password_hash(admin['password'], passwordTried):
             error = "wrong pwd."
-
 
 
         if error is None:

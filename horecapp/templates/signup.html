@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+<h1>Administrateur</h1>
+<p>Bienvenue dans l'application CovidTrack !
+<br>
+Merci d'avoir choisi notre solution pour le tracking clients #covid.</p>
+<p>Créez en une minute votre compte</p>
+<form action="/login" method="post">
+
+    <div class="form-group">
+        <label for="adminName">Nom Administrateur : </label>
+        <input name="adminName" class="form-control" id="adminName">
+    </div>
+
+    <div class="form-group">
+        <label for="password">Mot de passe : </label>
+        <input type="password" name="password" class="form-control" id="password">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Valider</button>
+
+</form>
+{% endblock %}
+

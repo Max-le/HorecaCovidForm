@@ -19,7 +19,6 @@ db = SQLAlchemy(app)
 
 app.register_blueprint(views.bp)
 
-
 class Visitors(db.Model):
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -36,6 +35,7 @@ class Horecadmin(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     admin_name = db.Column(db.String(128), unique = True, nullable = False)
     password = db.Column(db.String(1024))
+
     
 db.create_all()
 app.logger.info("db created.")
